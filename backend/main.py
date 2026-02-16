@@ -400,7 +400,7 @@ async def health_check():
     return {"status": "healthy", "version": "2.0.0", "timestamp": time.time()}
 
 # Serve static files (frontend) in production
-frontend_path = os.path.join(os.path.dirname(__file__), "..", "frontend")
+frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")
     
